@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "jsx": "preserve",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src"
+  ]
+}
