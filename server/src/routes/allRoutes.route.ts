@@ -1,11 +1,20 @@
 import { Express } from 'express';
-// import menusRoute from './menus/menus.route';  // future
-// import ordersRoute from './orders/orders.route';
+import healthRoute from '../modules/utils/routes/health.route';
 
 export default function loadRoutes(app: Express) {
-  // Core routes
+ // Default route
+ app.get('/', (req, res) => {
+   res.json({
+     name: 'InstantMenu API',
+     version: '1.0.0',
+     status: 'running',
+     endpoints: {
+       health: '/health',
+       menus: '/api/menus',
+       orders: '/api/orders'
+     }
+   });
+ });
 
-  // Feature modules
-  // app.use('/api/menus', menusRoute);
-  // app.use('/api/orders', ordersRoute);
+ app.use('/health', healthRoute);
 }
